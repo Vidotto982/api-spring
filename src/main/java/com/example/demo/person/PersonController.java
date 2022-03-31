@@ -19,8 +19,8 @@ public record PersonController(PersonService personService) {
     }
 
     @PostMapping
-    public void NewStudent(@RequestBody Person person) {
-        personService.addNewPerson(person);
+    public void NewPerson(@RequestBody Person person) {
+        personService.addPerson(person);
     }
 
     @DeleteMapping(path = "{personId}")

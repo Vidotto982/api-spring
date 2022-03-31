@@ -18,7 +18,7 @@ public class PersonService {
         return personRepository.findAll();
     }
 
-    public void addNewPerson(Person person){
+    public void addPerson(Person person){
         Optional<Person> personOptional = personRepository
                 .findPersonByName(person.getName());
         if (personOptional.isPresent()) {
@@ -47,7 +47,7 @@ public class PersonService {
             if (personOptional.isPresent()){
                 throw new IllegalStateException("taken");
             }
+        foundPerson.setCountry(person.getCountry());
         }
-        foundPerson.setName(person.getCountry());
     }
 }
